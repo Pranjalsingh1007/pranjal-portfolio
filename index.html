@@ -1,118 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Pranjal Singh — Salesforce Portfolio</title>
-<style>
-  :root{--bg:#f6f8fa;--card:#ffffff;--accent:#0a66c2;--muted:#556;}
-  body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#111;}
-  .wrap{max-width:900px;margin:36px auto;padding:28px;background:var(--card);border-radius:12px;box-shadow:0 10px 30px rgba(15,23,42,0.08);}
-  header{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
-  .avatar{width:88px;height:88px;border-radius:12px;background:linear-gradient(135deg,#eaf3ff,#fff);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:22px;}
-  h1{margin:0;font-size:26px;}
-  p.lead{margin:6px 0 0;color:var(--muted);}
-  .grid{display:grid;grid-template-columns:1fr 320px;gap:26px;margin-top:22px;}
-  .card{background:transparent;}
-  h2{font-size:18px;margin:0 0 10px;color:#0b2540;}
-  ul{margin:0;padding-left:18px}
-  li{margin-bottom:8px;line-height:1.4;}
-  .meta{font-size:14px;color:var(--muted);margin-top:8px;}
-  .skills-list{display:flex;flex-wrap:wrap;gap:8px}
-  .pill{background:#f1f6fb;border-radius:999px;padding:6px 10px;font-size:13px;color:#123;}
-  .footer{margin-top:22px;font-size:13px;color:var(--muted);}
-  a{color:var(--accent);text-decoration:none}
-  @media (max-width:880px){.grid{grid-template-columns:1fr;}.avatar{width:72px;height:72px}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pranjal Singh — Resume / Portfolio</title>
+  <meta name="description" content="Pranjal Singh — Salesforce Administrator/Developer. Copado, Flows, Apex, Dynatrace, CRM, DevOps." />
+  <style>
+    :root{
+      --accent:#0b63c6;
+      --muted:#6b7280;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --maxw:900px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#0f172a;
+      line-height:1.45;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{width:100%;max-width:var(--maxw);}
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:28px;
+      box-shadow:0 8px 30px rgba(16,24,40,0.06);
+      margin-bottom:20px;
+    }
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .name{display:flex;flex-direction:column;}
+    .name h1{margin:0;font-size:26px}
+    .name p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    .contact{font-size:14px;color:var(--muted);text-align:right}
+    .section{margin-top:18px}
+    .section h2{font-size:16px;margin:0 0 10px;color:var(--accent)}
+    .lead{font-size:15px;margin:0;color:#13213b}
+    ul{margin:8px 0 0;padding-left:20px}
+    li{margin-bottom:6px}
+    .two-col{display:grid;grid-template-columns:1fr 280px;gap:20px}
+    @media (max-width:860px){.two-col{grid-template-columns:1fr}}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef6ff;color:var(--accent);font-size:13px;margin:6px 6px 6px 0}
+    .muted{color:var(--muted);font-size:14px}
+    .small{font-size:13px;color:var(--muted)}
+    .project{border-left:3px solid #e6eefc;padding-left:12px;margin-bottom:10px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    footer{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
+    .badge{font-weight:600;color:#0b63c6}
+    .download{
+      display:inline-block;
+      margin-top:12px;
+      padding:8px 12px;
+      border-radius:8px;
+      background:var(--accent);
+      color:white;
+      text-decoration:none;
+      font-size:14px;
+    }
+    .print-btn{
+      display:inline-block;
+      margin-left:8px;
+      padding:8px 12px;
+      border-radius:8px;
+      background:#10b981;
+      color:white;
+      text-decoration:none;
+      font-size:14px;
+      cursor:pointer;
+    }
+    /* Print styling */
+    @media print {
+      body{background:white;padding:0;}
+      .card{box-shadow:none;border-radius:0;padding:0;}
+      header{flex-direction:column;align-items:flex-start;}
+      .two-col{grid-template-columns:1fr !important;}
+      .download, .print-btn{display:none !important;}
+    }
+  </style>
 </head>
 <body>
-  <main class="wrap" role="main">
-    <header>
-      <div class="avatar">PS</div>
-      <div>
-        <h1>Pranjal Singh</h1>
-        <p class="lead">Salesforce Admin/Dev — CRM Optimization &amp; Workflow Enhancement</p>
-        <p class="meta">Email: <a href="mailto:pranjalsingh1007@gmail.com">pranjalsingh1007@gmail.com</a> · Phone: +91 7895770323 · <a href="https://www.linkedin.com/in/pranjal-singh-53b482348" target="_blank" rel="noopener">LinkedIn</a></p>
+  <div class="container">
+    <div class="card" role="region" aria-label="Resume">
+      <header>
+        <div class="name" aria-hidden="false">
+          <h1>Pranjal Singh</h1>
+          <p class="muted">Salesforce Administrator / Developer — CRM • DevOps • Finance Ops (Tech-enabled)</p>
+        </div>
+        <div class="contact" aria-hidden="false">
+          <div class="small">pranjalsingh1007@gmail.com · +91 7895770323 · Noida</div>
+          <div style="margin-top:8px">
+            <a class="download" href="mailto:pranjalsingh1007@gmail.com?subject=Resume%20Contact">Contact</a>
+            <button class="print-btn" onclick="window.print()">Download PDF</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="section" aria-labelledby="summary">
+        <h2 id="summary">Professional summary</h2>
+        <p class="lead">
+          Salesforce Administrator/Developer with 3+ years of experience delivering scalable CRM solutions for enterprise clients across banking, insurance, and financial services. Skilled in Sales Cloud, Service Cloud, Lightning, automation (Flows, Apex), incident management, and deployment efficiency using Copado. Proven record of reducing downtime, optimizing workflows, and improving user adoption through reports, dashboards and user-centred configuration.
+        </p>
+      </section>
+
+      <div class="two-col">
+        <div>
+          <section class="section" aria-labelledby="achievements">
+            <h2 id="achievements">Key achievements</h2>
+            <ul>
+              <li>Reduced production downtime by <strong>50%</strong> at Allianz Life via proactive incident resolution, RCA, and functional improvements aligned with ITSM practices.</li>
+              <li>Improved CRM consistency and user adoption by <strong>30%</strong> at Refinitiv through advanced Flows, Flexi Page customizations and process standardization.</li>
+              <li>Improved deployment efficiency by <strong>40%</strong> using Copado automation, CodeScan fixes and Apex optimization.</li>
+              <li>Built automated Excel reporting solutions (Flows + Visualforce) to support CPQ reporting, boosting reporting capability by <strong>35%</strong>.</li>
+            </ul>
+          </section>
+
+          <section class="section" aria-labelledby="experience">
+            <h2 id="experience">Work experience</h2>
+            <div class="project">
+              <strong>Tata Consultancy Services (TCS)</strong> — <span class="small">System Engineer (Salesforce Admin/Dev)</span>
+              <div class="small muted">July 2021 – July 2025</div>
+              <ul>
+                <li>Administered Salesforce user setup, profiles, roles and permissions across multi-team environments to ensure secure, efficient operations.</li>
+                <li>Customized objects, fields, record types, validation rules and page layouts to align with evolving business needs.</li>
+                <li>Designed and optimized Flows, Process Builder automations and workflows to streamline operations and increase productivity.</li>
+                <li>Coordinated deployments with Copado and change sets; enforced release quality controls and reduced production errors.</li>
+                <li>Provided first-line support for incidents, service requests and data issues; conducted end-user training and documentation.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section" aria-labelledby="projects">
+            <h2 id="projects">Key projects</h2>
+            <div class="project"><strong>Allianz Life — IT Application Service Management</strong> <span class="small muted">Sep 2024 – Jul 2025</span><p class="small">Managed Salesforce ASM portfolio: incident reduction, RCA, system stability monitoring using Dynatrace, and operational improvements.</p></div>
+            <div class="project"><strong>Refinitiv — CRM Unification</strong> <span class="small muted">Jun 2023 – Aug 2024</span><p class="small">Automated reporting with Flows and Visualforce for CPQ; customized Flexi Pages and standardized workflow rules to improve CRM adoption.</p></div>
+            <div class="project"><strong>Refinitiv — Technical Debt Reduction</strong> <span class="small muted">Dec 2022 – Apr 2023</span><p class="small">Improved Apex quality by removing SOQL/DML in loops, resolved CodeScan issues and automated deployments with Copado.</p></div>
+            <div class="project"><strong>US Bank — Salesforce Admin & Development</strong> <span class="small muted">Oct 2021 – Nov 2022</span><p class="small">Configured Salesforce objects, validation rules and layouts; developed Apex classes, triggers and Aura Components to boost workflow productivity.</p></div>
+          </section>
+        </div>
+
+        <aside>
+          <section class="section" aria-labelledby="skills">
+            <h2 id="skills">Technical skills</h2>
+            <div class="skills">
+              <span class="chip">Salesforce Admin</span>
+              <span class="chip">Sales Cloud</span>
+              <span class="chip">Service Cloud</span>
+              <span class="chip">Lightning</span>
+              <span class="chip">Flows</span>
+              <span class="chip">Apex</span>
+              <span class="chip">Visualforce</span>
+              <span class="chip">Aura Components</span>
+              <span class="chip">Copado</span>
+              <span class="chip">GitHub</span>
+              <span class="chip">Dynatrace</span>
+              <span class="chip">ITSM / ServiceNow</span>
+              <span class="chip">UAT</span>
+              <span class="chip">CPQ</span>
+            </div>
+            <div style="margin-top:12px"><h3 class="small">DevOps & tools</h3><p class="small muted">Copado · GitHub · Jira · Visual Studio Code · Change Sets · CodeScan · Workbench</p></div>
+            <div style="margin-top:12px"><h3 class="small">Monitoring & methods</h3><p class="small muted">Dynatrace · Incident Management · Root Cause Analysis · SLA Monitoring · Agile · SDLC</p></div>
+          </section>
+
+          <section class="section" aria-labelledby="education">
+            <h2 id="education">Education</h2>
+            <p class="small"><strong>Sastra University, TN</strong> — Master of Computer Applications (2022 – 2024)</p>
+            <p class="small"><strong>GLA University, UP</strong> — Bachelor of Computer Applications (2018 – 2021)</p>
+          </section>
+
+          <section class="section" aria-labelledby="certs">
+            <h2 id="certs">Certifications</h2>
+            <ul>
+              <li>Copado Certified Fundamentals I</li>
+              <li>Salesforce Certified AI Associate</li>
+              <li>Salesforce Administrator — In progress</li>
+              <li>Salesforce: Sales Cloud, Service Cloud, Lightning (training)</li>
+            </ul>
+          </section>
+
+          <section class="section" aria-labelledby="contact2">
+            <h2 id="contact2">Contact & links</h2>
+            <p class="small muted">Email: <a href="mailto:pranjalsingh1007@gmail.com">pranjalsingh1007@gmail.com</a></p>
+            <p class="small muted">Phone: +91 7895770323</p>
+            <p class="small muted">GitHub: <a href="https://github.com/Pranjalsingh1007" target="_blank" rel="noopener">github.com/Pranjalsingh1007</a></p>
+            <p class="small muted">Location: Noida, India</p>
+          </section>
+        </aside>
       </div>
-    </header>
 
-    <section class="grid" aria-label="portfolio content">
-      <div class="card">
-        <h2>About Me</h2>
-        <p>I’m a Salesforce Administrator with 3+ years’ experience working across Sales &amp; Service Cloud for enterprise clients. I focus on improving system reliability, simplifying workflows, and delivering measurable business outcomes through practical platform improvements.</p>
-
-        <h2 style="margin-top:18px">Key Achievements</h2>
-        <ul>
-          <li>Reduced data entry errors by <strong>25%</strong> through targeted field and validation rule improvements.</li>
-          <li>Increased process efficiency by <strong>20%</strong> by resolving workflow logic issues.</li>
-          <li>Improved deployment quality and cut errors by <strong>15%</strong> with stricter release practices.</li>
-          <li>Accelerated deployment time by <strong>40%</strong> by streamlining Copado processes.</li>
-          <li>Boosted reporting capabilities by <strong>35%</strong> with tailored reports and dashboards.</li>
-          <li>Reduced production downtime by <strong>50%</strong> through faster incident triage with cross-team coordination.</li>
-        </ul>
-
-        <h2 style="margin-top:18px">Work Experience</h2>
-        <h3 style="margin:8px 0 6px;">Tata Consultancy Services (TCS) · System Engineer — Salesforce Admin/Dev</h3>
-        <p class="meta"><em>2021 – 2025</em></p>
-        <ul>
-          <li>Managed user setup, roles, profiles and permissions for multi-team environments.</li>
-          <li>Customized objects, validation rules, record types and page layouts to match business needs.</li>
-          <li>Built and optimized Flows, Process Builder automations and workflows to streamline operations.</li>
-          <li>Designed reports and dashboards for stakeholders to track KPIs and make decisions.</li>
-          <li>Coordinated releases using Copado and change sets; enforced quality checks to reduce production issues.</li>
-          <li>Provided first-line support, resolved incidents, and trained team members on CRM best practices.</li>
-        </ul>
-
-        <h2 style="margin-top:18px">Education</h2>
-        <ul>
-          <li>MCA — Sastra University, TN (2022–2024)</li>
-          <li>BCA — GLA University, UP (2018–2021)</li>
-        </ul>
-
-        <div class="footer">Download: <a href="Pranjal_Singh_Resume.pdf" download>Resume (PDF)</a> · <em>Tip:</em> Upload this file as <code>index.html</code> in your GitHub repo to publish via GitHub Pages.</div>
-      </div>
-
-      <aside class="card" aria-label="skills & certifications">
-        <h2>Technical Skills</h2>
-        <div class="skills-list" style="margin-bottom:12px">
-          <span class="pill">Sales & Service Cloud</span>
-          <span class="pill">Flows & Process Builder</span>
-          <span class="pill">SOQL</span>
-          <span class="pill">Validation Rules</span>
-          <span class="pill">Visualforce</span>
-          <span class="pill">Data Migration</span>
-          <span class="pill">Trigger Dev</span>
-        </div>
-
-        <h2 style="margin-top:14px">DevOps & Tools</h2>
-        <div class="skills-list" style="margin-bottom:12px">
-          <span class="pill">Copado</span>
-          <span class="pill">GitHub</span>
-          <span class="pill">VS Code</span>
-          <span class="pill">Workbench</span>
-          <span class="pill">Jira</span>
-        </div>
-
-        <h2 style="margin-top:14px">Certifications</h2>
-        <ul>
-          <li>COPADO Certified Fundamentals I</li>
-          <li>Salesforce Certified AI Associate</li>
-        </ul>
-
-        <h2 style="margin-top:14px">Professional Skills</h2>
-        <ul>
-          <li>Analytical problem-solving</li>
-          <li>Cross-functional collaboration</li>
-          <li>Change management & training</li>
-          <li>Communication & documentation</li>
-        </ul>
-
-        <div style="margin-top:18px">
-          <strong>Contact</strong>
-          <p class="meta">pranjalsingh1007@gmail.com<br/>+91 7895770323</p>
-        </div>
-      </aside>
-    </section>
-  </main>
+      <footer>
+        <div>Resume generated from uploaded PDF. Keywords prioritized for ATS: <span class="badge">Salesforce · Copado · Flows · Apex · Dynatrace · CRM · DevOps</span></div>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
